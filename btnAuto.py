@@ -12,6 +12,7 @@ import quopri
 import requests
 import json
 import datetime
+import credentials
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
@@ -132,11 +133,7 @@ def main():
     fHtml = rreplace(tmpHtml,'&nbsp;', '', 1)
     
     #post to wordpress api
-    wordPressUrl = "http://arkmumc.org/wp-json/wp/v2"
-    user = "mikesungunkim"
-    password = "vQX3 aKUm eL07 4tyf VdGc 7TwB"
-
-    cred = user + ":" + password
+    cred = credentials.USER + ":" + credentials.PASSWORD
     token = base64.b64encode(cred.encode())
     
     header = {
@@ -151,7 +148,7 @@ def main():
         'categories' :[25,22]
     }
 
-    newPostRequest = requests.post(wordPressUrl + "/posts",headers=header, json = post)
+    newPostRequest = requests.post(credentials.WORDPRESSURL + "/posts",headers=header, json = post)
     print(newPostRequest)
 
 
