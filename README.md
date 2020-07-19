@@ -10,3 +10,5 @@ Post data using WORDPRESS API
         WORDPRESSURL = "http://arkmumc.org/wp-json/wp/v2"
 3. install requirements.txt       
 4. verification window for Gmail will prompt. Verify app by clicking 'Advanced' and 'Go to {appName}' 
+
+* When Token Expired error occured, replace credentials.json by conduct step 1.
