@@ -112,11 +112,14 @@ def main():
     msg = GetMessage(service,"me",msgs[0].get('id'))
     
     #retrieve title
-    subject = msg['payload']['headers'][18]['value']
+    subject = ""
+    headers = msg['payload']['headers']
+    for header in headers:
+        if header['name'] == "Subject" :
+            subject = header['value']
     date = subject.split('주보')[0]
     year = datetime.datetime.now().year
     title = str(year) + "년 " + date + "교회소식"
-    
 
     rm1 = msg['payload']['parts'][0]['parts'][0]['body']['data']
     rm2 = msg['payload']['parts'][0]['parts'][1]['body']['data']
@@ -150,7 +153,6 @@ def main():
 
     newPostRequest = requests.post(credentials.WORDPRESSURL + "/posts",headers=header, json = post)
     print(newPostRequest)
-
 
 if __name__ == '__main__':
     main()
