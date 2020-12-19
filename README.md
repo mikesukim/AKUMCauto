@@ -1,14 +1,13 @@
 # AKUMCauto
-Arkansas Korean United Methodist Church Automation tools
+Arkansas Korean United Methodist Church Bulletin Uploading Automation tool
 
-Retrieving data through GMAIL API, 
-Post data using WORDPRESS API
+SUMMARY : Retrieving data through GMAIL API, Post data using WORDPRESS API
 
-1. credentials.json should be added from "https://developers.google.com/gmail/api/quickstart/python"
-2. credentials.py (contains Wordpress credentials) should be added and contain USER, PASSWORD, WORDPRESSURL.
+1. Get credentials.json file from "https://developers.google.com/gmail/api/quickstart/python" and add to directory
+2. Create credentials.py (contains Wordpress credentials) and it should contain USER, PASSWORD, WORDPRESSURL.
         USER and PASSWORD can be found at AKUM Wordpress admin page.
         WORDPRESSURL = "http://arkmumc.org/wp-json/wp/v2"
 3. install requirements.txt       
 4. verification window for Gmail will prompt. Verify app by clicking 'Advanced' and 'Go to {appName}' 
 
-* When Token Expired error occured, replace credentials.json by conduct step 1.
+* When Token Expired error occurs, replace credentials.json by conducting step 1.
